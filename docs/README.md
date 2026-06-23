@@ -3,7 +3,7 @@
 This `docs` folder contains the project documentation and design notes for FinanceTracker.
 
 Files:
-- `01_PROJECT_OVERVIEW.md`
+- `01_PRODUCT_OVERVIEW.md`
 - `02_REQUIREMENTS.md`
 - `03_TECH_STACK.md`
 - `04_SYSTEM_ARCHITECTURE.md`
