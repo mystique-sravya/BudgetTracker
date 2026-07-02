@@ -435,7 +435,6 @@ Milestone 1 must be stable before Milestone 2 work begins. Milestone 2 features 
 | Version | Date | Changes |
 | --- | --- | --- |
 | 1.0 | June 2026 | Initial draft — scope, functional/non-functional requirements, user stories, acceptance criteria |
-| 1.1 | June 2026 | Added development roadmap, feature dependencies, traceability matrix |
 | 2.0 | June 2026 | Milestone-based roadmap; AI downgraded to P1; expanded AI/Dashboard/Settings/Export modules; functional modules overview |
 
 ---
