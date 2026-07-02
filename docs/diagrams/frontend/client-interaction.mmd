@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant User
+    participant View
+    participant Form
+    participant Action
+    participant Cache
+    User->>View: Interact
+    View->>Form: Capture or edit state
+    Form->>Action: Submit command
+    Action-->>View: Result
+    View->>Cache: Patch or invalidate
+    Cache-->>View: Refresh server state

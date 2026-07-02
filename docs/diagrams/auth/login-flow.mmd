@@ -1,0 +1,9 @@
+flowchart TD
+    Start([Login]) --> Creds[Submit credentials]
+    Creds --> Valid{Valid?}
+    Valid -- No --> Reject[Reject]
+    Valid -- Yes --> Verified{Verified?}
+    Verified -- No --> Verify[Verification flow]
+    Verified -- Yes --> Session[Issue session]
+    Session --> Cookie[Set cookies]
+    Cookie --> Redirect[Redirect to app]

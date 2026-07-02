@@ -1,0 +1,8 @@
+flowchart TD
+    Data[(Budgets + Transactions + Preferences)] --> Rules[Notification rules]
+    Rules --> Edge[Supabase Edge Functions]
+    Edge --> Pending[Notification records]
+    Pending --> Email[Resend]
+    Pending --> InApp[Supabase Realtime]
+    Email --> Inbox[User inbox]
+    InApp --> App[Browser + Sonner]

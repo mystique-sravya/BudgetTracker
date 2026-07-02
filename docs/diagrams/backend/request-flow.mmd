@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant Browser
+    participant MW as Middleware
+    participant Entry as Route Handler / Action
+    participant Val as Validation
+    participant Service
+    participant Repo as Repository
+    participant Drizzle
+    participant DB as Supabase PostgreSQL
+    participant RT as Realtime
+    participant Client as Client Refresh
+    Browser->>MW: Request
+    MW->>Entry: Allowed request
+    Entry->>Val: Parse input
+    Val->>Service: Typed command
+    Service->>Repo: Domain operation
+    Repo->>Drizzle: Query or transaction
+    Drizzle->>DB: Execute
+    DB-->>Drizzle: Commit result
+    Drizzle-->>Repo: Typed rows
+    Repo-->>Service: Domain result
+    Service-->>Entry: Response model
+    Service-->>RT: Publish when relevant
+    Entry-->>Browser: Response
+    RT-->>Client: Push update

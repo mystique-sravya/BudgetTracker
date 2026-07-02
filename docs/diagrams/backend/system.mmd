@@ -1,0 +1,20 @@
+flowchart TD
+    Browser[Browser] --> Next[Next.js App Router] --> MW[Middleware]
+    MW --> RH[Route Handlers]
+    MW --> SA[Server Actions]
+    RH --> Val[Validation Layer]
+    SA --> Val
+    Val --> Biz[Business Layer]
+    Biz --> Repo[Repository Layer]
+    Repo --> ORM[Drizzle ORM]
+    ORM --> DB[(Supabase PostgreSQL)]
+    MW --> Auth[Supabase Auth]
+    Biz --> Storage[Supabase Storage]
+    Biz --> RT[Supabase Realtime]
+    Biz --> Edge[Supabase Edge Functions]
+    Biz --> Gemini[Google Gemini Flash]
+    Biz --> Resend[Resend]
+    RH --> Sentry[Sentry]
+    SA --> Sentry
+    Biz --> Sentry
+    RT --> Browser

@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant App
+    participant Auth as Supabase Auth
+    participant DB as PostgreSQL
+    User->>Browser: Submit credentials
+    Browser->>App: Login request
+    App->>Auth: Authenticate
+    Auth-->>App: Session tokens
+    App-->>Browser: Cookies
+    Browser->>App: Protected route request
+    App->>Auth: Validate session
+    Auth-->>App: Identity
+    App->>DB: Query scoped data
+    DB-->>App: Authorized rows
+    App-->>Browser: Protected response

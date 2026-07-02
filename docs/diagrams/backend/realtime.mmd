@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant UserA
+    participant BrowserA
+    participant App
+    participant DB as PostgreSQL
+    participant RT as Realtime
+    participant BrowserB
+    UserA->>BrowserA: Update shared budget
+    BrowserA->>App: Submit mutation
+    App->>DB: Persist change
+    DB-->>RT: Change event
+    RT-->>BrowserB: Realtime payload
+    BrowserB->>BrowserB: Patch or invalidate cache

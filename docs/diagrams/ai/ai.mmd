@@ -1,0 +1,8 @@
+flowchart LR
+    Trigger[Dashboard or schedule] --> Aggregate[Aggregation Layer]
+    Aggregate --> Prompt[Prompt Builder]
+    Prompt --> Gemini[Gemini Flash]
+    Gemini --> Validate[Zod validation]
+    Validate --> Cache[Cache decision]
+    Cache --> Store[(AI Insights)]
+    Store --> UI[Dashboard]

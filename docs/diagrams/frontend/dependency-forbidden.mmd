@@ -1,0 +1,4 @@
+flowchart LR
+    UI[UI] -. forbidden .-> Database[Database]
+    Components[Components] -. forbidden .-> Repositories[Repositories]
+    Repositories -. forbidden .-> Components[Components]

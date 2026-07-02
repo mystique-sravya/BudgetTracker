@@ -1,0 +1,3 @@
+flowchart TD
+    Browser[Browser] --> HTTPS[HTTPS] --> MW[Middleware] --> Session[Session validation] --> Authz[Authorization] --> Input[Input validation] --> Service[Business logic] --> RLS[Postgres RLS] --> Data[(Protected data)]
+    Service --> Output[Output validation or filtering]

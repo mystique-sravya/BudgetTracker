@@ -1,0 +1,13 @@
+stateDiagram-v2
+    [*] --> Anonymous
+    Anonymous --> Authenticating
+    Authenticating --> Active: Success
+    Authenticating --> Anonymous: Failure
+    Active --> Refreshed: Refresh
+    Refreshed --> Active
+    Active --> Recovery: Reset initiated
+    Recovery --> Active: Reset success
+    Active --> SignedOut: Logout
+    SignedOut --> Anonymous
+    Active --> Expired: Refresh fails
+    Expired --> Anonymous

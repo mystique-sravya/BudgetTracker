@@ -1,0 +1,7 @@
+flowchart LR
+    GH[GitHub] --> CI[GitHub Actions]
+    CI --> Preview[Vercel Preview]
+    CI --> Prod[Vercel Production]
+    Prod --> App[Next.js App]
+    App --> Supabase[Supabase]
+    App --> Sentry[Sentry]

@@ -1,0 +1,9 @@
+flowchart LR
+    Layout[Layouts] --> Page[Pages]
+    Page --> SC[Server Components]
+    Page --> CC[Client Components]
+    SC --> CC
+    CC --> Store[Zustand]
+    CC --> Query[TanStack Query]
+    CC --> Forms[React Hook Form + Zod]
+    Forms --> Toasts[Sonner]

@@ -1,0 +1,11 @@
+flowchart TD
+    Start([Access request]) --> Auth{Authenticated?}
+    Auth -- No --> Deny401[401]
+    Auth -- Yes --> Context[Resolve tenant scope]
+    Context --> Role[Resolve effective role]
+    Role --> Feature{Feature allowed?}
+    Feature -- No --> Deny403[403]
+    Feature -- Yes --> Query[Repository operation]
+    Query --> RLS{RLS permits row access?}
+    RLS -- No --> DenyScoped[Forbidden or empty]
+    RLS -- Yes --> Success[Return resource]

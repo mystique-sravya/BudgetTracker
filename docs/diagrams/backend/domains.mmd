@@ -1,0 +1,18 @@
+flowchart TD
+    Core[FinanceTracker Domains] --> Transactions[Transactions]
+    Core --> Budgets[Budgets]
+    Core --> Goals[Goals]
+    Core --> Households[Households]
+    Core --> Notifications[Notifications]
+    Core --> AI[AI Insights]
+    Core --> Reports[Reports]
+    Core --> Settings[Settings]
+    Transactions --> Budgets
+    Transactions --> Reports
+    Transactions --> AI
+    Households --> Budgets
+    Households --> Notifications
+    Budgets --> Notifications
+    Budgets --> AI
+    Reports --> AI
+    Settings --> Notifications

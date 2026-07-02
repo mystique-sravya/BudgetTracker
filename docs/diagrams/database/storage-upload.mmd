@@ -1,0 +1,8 @@
+flowchart TD
+    Start([File selected]) --> Validate[Validate metadata]
+    Validate --> Allowed{Authorized?}
+    Allowed -- No --> Reject[Reject]
+    Allowed -- Yes --> Upload[Upload to Storage]
+    Upload --> Persist[Persist asset metadata]
+    Persist --> Access[Issue signed URL or path]
+    Access --> UI[Update UI]

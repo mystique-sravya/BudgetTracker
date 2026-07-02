@@ -1,0 +1,7 @@
+flowchart TD
+    App[Next.js runtime] --> Repo[Repository]
+    Repo --> ORM[Drizzle]
+    ORM --> DB[(PostgreSQL)]
+    DB --> ORM
+    ORM --> Repo
+    Repo --> Result[Typed domain result]
